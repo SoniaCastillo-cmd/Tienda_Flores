@@ -26,7 +26,7 @@ public class Flor {
     @Enumerated(EnumType.STRING)
     private TipoFlor tipo;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private ExistenciaFlor existencia;
 
 

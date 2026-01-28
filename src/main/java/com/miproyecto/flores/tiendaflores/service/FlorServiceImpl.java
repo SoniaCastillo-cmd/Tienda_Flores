@@ -22,21 +22,25 @@ public class FlorServiceImpl implements FlorService{
 
     @Override
     public List<Flor> findAll() {
-        return List.of();
+        log.debug("[findAll]");
+        return florRepository.findAll();
     }
 
     @Override
     public Flor findByName(String nombre) {
-        return null;
+        log.info("[findByName] nombre: {}", nombre);
+        return florRepository.findByNombre(nombre);
     }
 
     @Override
     public List<Flor> findByTipo(TipoFlor tipo) {
-        return List.of();
+        log.info("[findByTipo] tipo:{}", tipo);
+        return florRepository.findByTipo(tipo);
     }
 
     @Override
     public List<Flor> findByColor(String color) {
-        return List.of();
+        log.info("[findByColor] color:{}", color);
+        return florRepository.findByColor(color);
     }
 }
