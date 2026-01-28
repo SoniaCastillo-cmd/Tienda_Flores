@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca de Flores</title>
+</head>
+<body>
+
+<div class="cabecera">
+    <h1>Buscador de Flores</h1>
+</div>
+
+<div class="buscador">
+    <form th:action="@{/b}" method="get">
+        <select name="tipo">
+            <option value="">Selecciona un tipo...</option>
+            <option th:each="t : ${tipo}" th:value="${t}" th:text="${t}"></option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+</div>
+
+<div class="tabla">
+    <table border="1"> <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Existencia</th>
+    </tr>
+    </thead>
+        <tbody>
+        <tr th:each="f : ${list}">
+            <td th:text="${f.nombre}">Nombre</td>
+            <td th:text="${f.tipo}">Tipo</td>
+            <td th:text="${f.existencia}">Estado</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

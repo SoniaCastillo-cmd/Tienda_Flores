@@ -16,13 +16,12 @@ import java.util.List;
 
 @Controller
 @Slf4j
-@RequestMapping
 public class FlorController {
 
     @Autowired
     FlorService florService;
 
-    @GetMapping
+    @GetMapping("/b")
     public String findAll(Model model){
         log.info("[findAll]");
         List<Flor> list=florService.findAll();
@@ -30,15 +29,12 @@ public class FlorController {
         model.addAttribute("list", list);
         model.addAttribute("tipo", TipoFlor.values());
         model.addAttribute("existencia", ExistenciaFlor.values());
-        return "/buscador/tipo_flores";
+        return "buscador/buscadorFlores";
     }
-    @GetMapping("/f")
-    public String buscarFlor(String nombre, TipoFlor tipoFlor, Model model){
-        log.info("[buscarFlor]");
-        List<Flor> list;
+
     }
 
 
 
 
-}
+
