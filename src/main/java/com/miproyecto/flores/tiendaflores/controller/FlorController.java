@@ -27,7 +27,7 @@ public class FlorController {
         List<Flor> list=florService.findAll();
         log.debug("[Flores List:{}]", list);
         model.addAttribute("list", list);
-        model.addAttribute("tipo", TipoFlor.values());
+        model.addAttribute("tipos", TipoFlor.values());
         model.addAttribute("existencia", ExistenciaFlor.values());
         return "buscador/buscadorFlores";
     }

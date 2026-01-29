@@ -14,7 +14,7 @@
     <form th:action="@{/b}" method="get">
         <select name="tipo">
             <option value="">Selecciona un tipo...</option>
-            <option th:each="t : ${tipo}" th:value="${t}" th:text="${t}"></option>
+            <option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}"></option>
         </select>
         <button type="submit">Filtrar</button>
     </form>
